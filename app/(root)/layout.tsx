@@ -24,7 +24,7 @@ export default function RootLayout({
                   alt="menu icon"/>
                   <MobileNav />
                 </div>
-                <div className="flex flex-col md:pb-1">
+                <div className="flex flex-col md:pb-14">
                   Toaster (Notification Popups)
                   {children}
                 </div>
