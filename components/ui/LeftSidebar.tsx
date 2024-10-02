@@ -17,10 +17,13 @@ const LeftSidebar = () => {
                 <Image src="/icons/logo.svg" alt='logo' width={23} height={27}/>
                 <h1 className='text-24 font-extrabold text-white max-lg:hidden'>100xdevsPodcast</h1>
             </Link>
+
             {sidebarLinks.map(({ route, label, imgURL }) => {
                 const isActive = pathName === route || pathName.startsWith(`${route}/`);
                 
-                return <Link href={route} key={label} className={cn(`flex gap-3 items-center py-4 max-lg: px-4 justify-center lg:justify-start`)}>
+                return <Link href={route} key={label} className={cn(`flex gap-3 items-center py-4 max-lg: px-4 justify-center lg:justify-start`, {
+                    'bg-nav-focus border-r-4 border-orange-1': isActive
+                })}>
                     <Image src={imgURL} alt='label' width={24} height={24}/>
                     <p>{label}</p>
                 </Link>
